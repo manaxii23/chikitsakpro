@@ -223,9 +223,9 @@ def main():
         user_answers[i - 1] = user_answer
 
     if st.button("Calculate Mental"):
-        unanswered_questions = [f"Mental Q{i+1}: {question['question']}" for i, answer in enumerate(user_answers) if answer == "Select one"]
+        unanswered_questions = [f"Q{i+1}" for i, answer in enumerate(user_answers) if answer == "Select one"]
         if unanswered_questions:
-            st.error(f"Please select an option for the following questions: {' & '.join(unanswered_questions)}")
+            st.error(f"Please select an option for the following questions: {', '.join(unanswered_questions)}")
         else:
             mental_prakriti_percentages = calculate_mental_prakriti_percentages(user_answers)
             st.write("Mental Prakriti Percentages:")
@@ -243,9 +243,9 @@ def main():
         user_answers[i - 1] = user_answer
 
     if st.button("Calculate Body"):
-        unanswered_questions = [f"Body Q{i+1}: {question['question']}" for i, answer in enumerate(user_answers) if answer == "Select one"]
+        unanswered_questions = [f"Q{i+1}" for i, answer in enumerate(user_answers) if answer == "Select one"]
         if unanswered_questions:
-            st.error(f"Please select an option for the following questions: {' & '.join(unanswered_questions)}")
+            st.error(f"Please select an option for the following questions: {', '.join(unanswered_questions)}")
         else:
             body_prakriti_percentages = calculate_body_prakriti_percentages(user_answers)
             st.write("Body Prakriti Percentages:")
