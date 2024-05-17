@@ -31,7 +31,7 @@ if prompt := st.chat_input("Ask me anything about Prakriti, Ayurveda, or Doshas"
     st.chat_message("user").markdown(prompt)
     
     # Check if the prompt is a greeting or related to Ayurveda
-    if any(greeting in prompt.lower() for greeting in ["hello", "hi", "hey"]) or any(ayurveda_term in prompt.lower() for ayurveda_term in ["ayurveda", "prakriti", "doshas", "vata", "pitta", "kapha", "dosha", "ayurvedic", "medicines"]):
+    if any(greeting in prompt.lower() for greeting in ["hello", "hi", "hey"]) or any(ayurveda_term in prompt.lower() for ayurveda_term in ["ayurveda", "prakriti", "doshas", "vata", "pitta", "kapha", "dosha", "ayurvedic", "medicines", "vatta", "pitta", "khapha"]):
         # Send user entry to Gemini and read the response
         response = st.session_state.chat.send_message(prompt) 
         
